@@ -25,7 +25,7 @@ secm = sec1 * sec2
 secd = sec1 / sec2
 secq = sec1 // sec2
 secr = sec1 % sec2
-print(f'{seca}, {secs=}, {secm=}, {secd=}, {secq=}, {secr=}') # f string
+print(f'{seca=}, {secs=}, {secm=}, {secd=}, {secq=}, {secr=}') # f string
 
 # 화씨를 섭씨로 바꿈
 # TC = (TF - 32) * 5/9
@@ -47,3 +47,6 @@ print(f'{tf1=} ==> {tc1=}')
 
 print(2 ** 3, 2 ** (1/2), 2 ** (-1/2))
 print(2 ** 3, 2 ** (1/2), 2 ** (-1/2))
+
+print(3/0)
+
