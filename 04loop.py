@@ -13,3 +13,35 @@ for looper in [1, 2, 3, 4, 5, '끝']:
 cities = ['서울', '부산', '인천', '의정부', '대전', '강릉', '논산', '포항']
 for city in cities:
     print(f'{city=}')
+
+string = "python"
+for c in string:
+    print(f'{c=}')
+
+i = 1
+while i < 10:
+    print(f'{i=}')
+    i = i + 2;
+
+# 1부터 100까지 홀수의 합
+
+sum = 0
+for i in range(1,100,2):
+    sum = sum + i
+print(f'{sum=}')
+
+# 1부터 100까지 짝수의 합
+
+sum = 0
+for i in range(0,101,2):
+    sum = sum + i
+print(f'{sum=}')
+
+# 1부터 100까지 짝수의 합을 while문으로 구함
+
+sum = 0
+i = 0
+while i <= 100:
+    sum = sum + i
+    i = i + 2
+print(f'{sum=}')
