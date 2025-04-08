@@ -4,21 +4,46 @@
 # 규칙: n이 짝수 -> n/2
 #      n이 홀수 -> 3 * n + 1
 #  예: 5 -> 16 -> 8 -> 4 -> 2 -> 1  (5단계)
+from numpy.ma.core import max_val
+from tornado.httputil import parse_response_start_line
 
-
-n = 99
-# 단계의 갯수를 셀 것
+n = 9
+# 단계의 갯수를 셀 것 - done
 # n을 99부터 1까지 변화하면서, 각각의 단계수를 출력할 것
 # 그 중 가장 큰 수를 찾을 것
+# n=97: 118번 만에 1호 도달
 
-for x in range(1,100):
-    while n != 1:
-        if n % 2 == 1:
-            n = 3 * n + 1
+maxvalue = 0
+max1 = 0
+max2 = 0
+
+for n in range(1,100):
+    print(f'{n=}')
+    ncount = 0
+    i = n
+
+    while i != 1:
+        if i % 2 == 1:
+            i = 3 * i + 1
         else:
-            n = n / 2
-        print(n,'단계')
+            i = i / 2
+        ncount = ncount + 1
 
+    print(f'{ncount}')
+    if maxvalue < ncount:
+        maxvalue = ncount
+        max1 = n
+
+print(f'{maxvalue=}, {max1=}')
+
+
+# for i in range(1,100):
+#     while n != 1:
+#         if n % 2 == 1:
+#             n = 3 * n + 1
+#         else:
+#             n = n / 2
+#         print(n,i,'단계')
 
 # while n % 2 == 1:
 #     if n:
