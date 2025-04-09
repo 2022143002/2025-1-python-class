@@ -20,7 +20,7 @@ max1 = 0
 max2 = 0
 max3 = 0
 
-for n in range(1,100):
+for n in range(1,100000):
     print(f'{n=}')
     ncount = 0
     i = n
