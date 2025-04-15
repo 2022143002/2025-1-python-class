@@ -4,6 +4,8 @@
 # 규칙: n이 짝수 -> n/2
 #      n이 홀수 -> 3 * n + 1
 #  예: 5 -> 16 -> 8 -> 4 -> 2 -> 1  (5단계)
+from operator import index
+
 import numpy as np
 import statistics
 import time
@@ -27,16 +29,37 @@ for n in range(1,MAXNUM):
     ncount = collatz(n)
     ncountl.append(ncount)
 
-
 # print(ncountl)
 # print(sum(ncountl) / len(ncountl))
 
 
 # 최대값, 평균, 중앙값, 표준편차, 최빈값
 
+# nmax = 0
+# nmaxs = 0
+# nmaxt = 0
+# nmax1 = 0
+# nmaxs1 = 0
+# nmaxt1 = 0
+
+
+# if nmax < ncount:
+#     nmaxs = nmax
+#     nmax = ncount
+#     nmaxs1 = nmax1
+#     nmax1 = MAXNUM
+# elif nmaxs < ncount:
+#     nmaxs = ncount
+#     nmaxs1 = MAXNUM
+# elif nmaxt < ncount:
+#     nmaxt = ncount
+#     nmaxt1 = MAXNUM
+# print(f'{nmax}')
+
 print(f'최대값 = {max(ncountl)}')
+print(f'해당숫자 = {ncountl.index(max(ncountl))}')
 print(f'평균 ={statistics.mean(ncountl): 5f}')
-print(f'중앙값 ={statistics.median(ncountl)}')
+print(f'중앙값 = {statistics.median(ncountl)}')
 print(f'표준편차 ={statistics.stdev(ncountl): 5f}')
 # print(f'최빈값 ={statistics.mode(ncountl)}')
 
@@ -58,6 +81,7 @@ for n in range(1,MAXNUM):
 # 최대값, 평균, 중앙값, 표준편차, 최빈값
 
 print(f'최대값 = {np.max(ncounta)}')
+print(f'해당숫자 = {np.argmax(ncounta)}')
 print(f'평균 ={np.mean(ncounta): 5f}')
 print(f'중앙값 = {np.median(ncounta)}')
 print(f'표준편차 ={np.std(ncounta): 5f}')
@@ -65,6 +89,9 @@ print(f'표준편차 ={np.std(ncounta): 5f}')
 
 end = time.time()
 print(f'{end - start: .5f}초가 걸렸습니다')
+
+
+
 
 
 

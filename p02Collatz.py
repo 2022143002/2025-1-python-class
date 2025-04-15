@@ -4,8 +4,7 @@
 # 규칙: n이 짝수 -> n/2
 #      n이 홀수 -> 3 * n + 1
 #  예: 5 -> 16 -> 8 -> 4 -> 2 -> 1  (5단계)
-from numpy.ma.core import max_val
-from tornado.httputil import parse_response_start_line
+
 
 n = 9
 # 단계의 갯수를 셀 것 - done
@@ -20,7 +19,7 @@ max1 = 0
 max2 = 0
 max3 = 0
 
-for n in range(1,100000):
+for n in range(1,100):
     print(f'{n=}')
     ncount = 0
     i = n
